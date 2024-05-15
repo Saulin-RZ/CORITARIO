@@ -1,0 +1,17 @@
+{
+    "songs": [
+      {
+        "number": 1,
+        "title": "RANDOM ONE",
+        "lyrics_with_chords": "C       G       Am      F\nLorem ipsum dolor sit amet,\nconsectetur adipiscing elit.\n\nC       G       Am      F\nPellentesque euismod magna,\nquis fringilla nisl lobortis eget.",
+        "lyrics_without_chords": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.\nPellentesque euismod magna,\nquis fringilla nisl lobortis eget."
+      },
+      {
+        "number": 2,
+        "title": "ESPIRITU DE DIOS",
+        "lyrics_with_chords": "                 Em                 D   \n// Espíritu de Dios, llena mi vida,\n         C                    B7\nllena mi alma, llena mi ser //\n\nEm                 .   \nSi lléname, lléname, lléname\n    D                      .\nCon tu presencia, lléname, lléname\n C                   . \nCon tu amor, lléname, lléname\n                B7                     Em\nCon tu bondad, espíritu de Dios",
+        "lyrics_without_chords": "// Espíritu de Dios, llena mi vida,\nllena mi alma, llena mi ser //\n\nSi lléname, lléname, lléname\nCon tu presencia, lléname, lléname\nCon tu amor, lléname, lléname\nCon tu bondad, espíritu de Dios"
+      }
+    ]
+  }
+  
