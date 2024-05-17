@@ -118,7 +118,7 @@ class ChordsPage extends StatelessWidget {
                 '${titles![index]}\n\n${chords![index]}',
                 style: const TextStyle(
                   color: Color.fromRGBO(131, 111, 255, 1),
-                  fontSize: 22, // Example: Apply white color for text
+                  fontSize: 26, // Example: Apply white color for text
                 ),
                 textAlign: TextAlign.center,
               ),
