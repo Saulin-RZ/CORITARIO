@@ -41,7 +41,7 @@ class ChordsFullPage extends StatelessWidget {
                   color: Color.fromRGBO(131, 111, 255, 1),
                   fontSize: 26, // Example: Apply white color for text
                 ),
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
               ),
             ),
           ),

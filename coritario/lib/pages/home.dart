@@ -1,4 +1,5 @@
 import 'package:coritario/logic/reader.dart';
+import 'package:coritario/logic/word_search.dart';
 import 'package:coritario/pages/lyrics.dart';
 import 'package:flutter/material.dart';
 
@@ -26,9 +27,15 @@ Future<void> loadData() async {
 }
 
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<int> matchingIndices = [];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +45,6 @@ class HomePage extends StatelessWidget {
     List<dynamic>? lyrics = DataHolder.lyrics;
     List<dynamic>? chords = DataHolder.chords;
 
-    
     if (songs == null || numbers == null || titles == null) {
       // Handle the case where data is not yet loaded
       return const Scaffold(
@@ -47,6 +53,10 @@ class HomePage extends StatelessWidget {
         ),
       );
     }
+
+    // If there is no search input, show all songs
+    List<int> displayedIndices = matchingIndices.isEmpty ? List.generate(titles.length, (index) => index) : matchingIndices;
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(240, 243, 255, 1),
       appBar: AppBar(
@@ -67,7 +77,7 @@ class HomePage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 60, right: 20, bottom: 10, top: 10),
               child: TextField(
-                style:const TextStyle(
+                style: const TextStyle(
                     color:  Color.fromRGBO(33, 25, 81, 1) 
                   ),
                 decoration: const InputDecoration(
@@ -85,7 +95,9 @@ class HomePage extends StatelessWidget {
                 ),
                 keyboardType: TextInputType.text,
                 onChanged: (value) {
-                  // Add your text field functionality here
+                  setState(() {
+                    matchingIndices = keyWordSearch(value, songs);
+                  });
                 },
               ),
             ),
@@ -124,55 +136,62 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView(
         children: List.generate(
-          titles.length,
-          (index) => GestureDetector(
-            onTap: () {
-              // Handle click action here
-              
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => LyricsPage(songs: songs, numbers: numbers, titles: titles, lyrics: lyrics, chords: chords, index: index,)));
-              
-              
-            },
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15.0, top: 8), // Add left padding
-              child: Row(
-                children: [
-                  Container(
-                    width: 30, // Increase the width of the container
-                    height: 30, // Increase the height of the container
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color.fromRGBO(131, 111, 255, 1), // Example: Apply blue color as background
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 9.5, top: 0),
-                      child: Text(
-                        '${numbers[index]}',
-                        style: const TextStyle(
-                          color: Color.fromRGBO(245, 246, 250, 1),
-                          fontSize: 19.5 // Example: Apply white color for text
+          displayedIndices.length,
+          (index) {
+            int songIndex = displayedIndices[index];
+            return GestureDetector(
+              onTap: () {
+                // Handle click action here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LyricsPage(
+                    songs: songs, 
+                    numbers: numbers, 
+                    titles: titles, 
+                    lyrics: lyrics, 
+                    chords: chords, 
+                    index: songIndex,
+                  )),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15.0, top: 8), // Add left padding
+                child: Row(
+                  children: [
+                    Container(
+                      width: 30, // Increase the width of the container
+                      height: 30, // Increase the height of the container
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color.fromRGBO(131, 111, 255, 1), // Example: Apply blue color as background
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 9.5, top: 0),
+                        child: Text(
+                          '${numbers[songIndex]}',
+                          style: const TextStyle(
+                            color: Color.fromRGBO(245, 246, 250, 1),
+                            fontSize: 19.5 // Example: Apply white color for text
+                          ),
                         ),
                       ),
+                    ), // Add prefix from the numbers list
+                    const SizedBox(width: 8), // Add space between prefix and title
+                    Text(
+                      titles[songIndex],
+                      style: const TextStyle(
+                        fontStyle: FontStyle.italic, // Example: Apply italic style
+                        color: Color.fromRGBO(131, 111, 255, 1),
+                        fontSize: 25 // Example: Apply red color
+                      ),
                     ),
-                  ), // Add prefix from the numbers list
-                  const SizedBox (width: 8), // Add space between prefix and title
-                  Text(
-                    titles[index],
-                    style: const TextStyle(
-                      fontStyle: FontStyle.italic, // Example: Apply italic style
-                      color: Color.fromRGBO(131, 111, 255, 1),
-                      fontSize: 25 // Example: Apply red color
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ),
+            );
+          },
         ),
-      )
-      );
+      ),
+    );
   }
 }
-
