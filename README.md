@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/coritario_icon.png">
-    <img src="./documentation_images/coritario_icon.png" style="width: 20px; height: auto;">
+    <img src="./documentation_images/coritario_icon.png" style="width: 5px; height: auto;">
   </picture>
 </p>
 
