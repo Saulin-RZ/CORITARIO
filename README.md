@@ -1,9 +1,10 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/coritario_icon.png">
-    <img src="./documentation_images/coritario_icon.png">
+    <img src="./documentation_images/coritario_icon.png" style="width: 100px; height: auto;">
   </picture>
 </p>
+
 
 # Coritario Bautista
  Cancionero bautista multiplataforma programado en Dart y distribuido mediante Flutter
@@ -17,7 +18,7 @@
   </picture>
 </p>
 
-Letra:
+Letras:
 
 <p align="center">
   <picture>
