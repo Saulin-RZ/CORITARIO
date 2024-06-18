@@ -1,27 +1,36 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/ACRONIM.png">
-    <img src="./documentation_images/ACRONIM.png">
+    <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/coritario_icon.png">
+    <img src="./documentation_images/coritario_icon.png">
   </picture>
 </p>
 
-# Bewing-Suit
- Python based desktop suit for wing structural analysis based on BEM
+# Coritario Bautista
+ Cancionero bautista multiplataforma programado en Dart y distribuido mediante Flutter
 
- Intended use:
+ Libreria:
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/BEWING_CONCEPT_2.png">
-    <img src="./documentation_images/BEWING_CONCEPT_2.png">
+    <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/1.png">
+    <img src="./documentation_images/1.png">
   </picture>
 </p>
 
-Internal structure:
+Letra:
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/BEWING_FUNCTION.png">
-    <img src="./documentation_images/BEWING_FUNCTION.png">
+    <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/2.png">
+    <img src="./documentation_images/2.png">
+  </picture>
+</p>
+
+Acordes / Pantalla completa:
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/3.png">
+    <img src="./documentation_images/3.png">
   </picture>
 </p>
