@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/coritario_icon.png">
-    <img src="./documentation_images/coritario_icon.png" width="100">
+    <img src="./documentation_images/coritario_icon.png" width="200">
   </picture>
 </p>
 
@@ -14,7 +14,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/1.png">
-    <img src="./documentation_images/1.png">
+    <img src="./documentation_images/1.png" width="400">
   </picture>
 </p>
 
@@ -23,7 +23,7 @@ Letras:
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/2.png">
-    <img src="./documentation_images/2.png">
+    <img src="./documentation_images/2.png" width="400">
   </picture>
 </p>
 
@@ -32,6 +32,6 @@ Acordes / Pantalla completa:
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/3.png">
-    <img src="./documentation_images/3.png">
+    <img src="./documentation_images/3.png" width="400">
   </picture>
 </p>
