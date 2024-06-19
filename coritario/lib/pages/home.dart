@@ -1,3 +1,5 @@
+import 'package:coritario/Style/colors.dart';
+import 'package:coritario/Style/styles.dart';
 import 'package:coritario/logic/reader.dart';
 import 'package:coritario/logic/word_search.dart';
 import 'package:coritario/pages/lyrics.dart';
@@ -37,6 +39,29 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<int> matchingIndices = [];
 
+  double _listTitlesFontSize = 25.0; // Initial font size for chords
+
+  // Function to increase chords font size
+  void _increaseFontSize() {
+  setState(() {
+    _listTitlesFontSize += 2.0; // Increase font size by 2 points
+    if (_listTitlesFontSize > 25.0) { // Limit font size to 25 points
+      _listTitlesFontSize = 25.0;
+    }
+  });
+}
+
+  // Function to decrease chords font size
+  void _decreaseFontSize() {
+    setState(() {
+      _listTitlesFontSize -= 2.0; // Decrease font size by 2 points
+      if (_listTitlesFontSize < 10.0) { // Ensure font size doesn't go below a certain limit
+        _listTitlesFontSize = 10.0;
+      }
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     List<dynamic>? songs = DataHolder.songs;
@@ -58,9 +83,9 @@ class _HomePageState extends State<HomePage> {
     List<int> displayedIndices = matchingIndices.isEmpty ? List.generate(titles.length, (index) => index) : matchingIndices;
 
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(240, 243, 255, 1),
+      backgroundColor: myWhite,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(131, 111, 255, 1),
+        backgroundColor: myPurple,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
@@ -69,7 +94,7 @@ class _HomePageState extends State<HomePage> {
         ),
         leading: const Icon(
           Icons.search,
-          color: Color.fromRGBO(240, 243, 255, 1), 
+          color: myWhite, 
           size: 35, // Change the size of the icon
           ),
         actions: [
@@ -77,17 +102,13 @@ class _HomePageState extends State<HomePage> {
             child: Padding(
               padding: const EdgeInsets.only(left: 60, right: 20, bottom: 10, top: 10),
               child: TextField(
-                style: const TextStyle(
-                    color:  Color.fromRGBO(33, 25, 81, 1) 
-                  ),
+                style: lightThemeTextFieldFilledStyle,
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.only(left: 10),
                   hintText: 'Buscar',
-                  hintStyle: TextStyle(
-                      color: Color.fromRGBO(178, 180, 186, 1)
-                    ),
+                  hintStyle: lightThemeTextFieldEmptyStyle,
                     filled: true,
-                    fillColor: Color.fromRGBO(240, 243, 255, 1),
+                    fillColor: myWhite,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(100)),
                       borderSide: BorderSide.none
@@ -105,27 +126,27 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        color: const Color.fromRGBO(131, 111, 255, 1),
+        color: myPurple,
         shape: const CircularNotchedRectangle(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              icon: const Icon(Icons.favorite, color: Color.fromRGBO(240, 243, 255, 1), 
+              icon: const Icon(Icons.favorite, color: myWhite, 
               size: 35),
               onPressed: () {
                 // Add functionality for the home button
               },
             ),
             IconButton(
-              icon: const Icon(Icons.grid_on_rounded, color: Color.fromRGBO(240, 243, 255, 1), 
+              icon: const Icon(Icons.grid_on_rounded, color: myWhite, 
               size: 35),
               onPressed: () {
                 // Add functionality for the search button
               },
             ),
             IconButton(
-              icon: const Icon(Icons.menu, color: Color.fromRGBO(240, 243, 255, 1), 
+              icon: const Icon(Icons.menu, color: myWhite, 
               size: 35),
               onPressed: () {
                 // Add functionality for the settings button
@@ -163,27 +184,20 @@ class _HomePageState extends State<HomePage> {
                       height: 30, // Increase the height of the container
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Color.fromRGBO(131, 111, 255, 1), // Example: Apply blue color as background
+                        color: myPurple, // Example: Apply blue color as background
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 9.5, top: 0),
+                        padding: const EdgeInsets.only(left: 8, top: 0.5),
                         child: Text(
                           '${numbers[songIndex]}',
-                          style: const TextStyle(
-                            color: Color.fromRGBO(245, 246, 250, 1),
-                            fontSize: 19.5 // Example: Apply white color for text
-                          ),
+                          style: lightThemeSideNumberStyle,
                         ),
                       ),
                     ), // Add prefix from the numbers list
                     const SizedBox(width: 8), // Add space between prefix and title
                     Text(
                       titles[songIndex],
-                      style: const TextStyle(
-                        fontStyle: FontStyle.italic, // Example: Apply italic style
-                        color: Color.fromRGBO(131, 111, 255, 1),
-                        fontSize: 25 // Example: Apply red color
-                      ),
+                      style: lightThemeListTittlesStyle.copyWith(fontSize: _listTitlesFontSize),
                     ),
                   ],
                 ),
@@ -191,6 +205,50 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
+      ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          // Decrease Font Size Area
+          GestureDetector(
+            onTap: _decreaseFontSize,
+            child: Container(
+              margin: EdgeInsets.only(right: 10.0),
+              width: 60.0,
+              height: 60.0,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: myPurple.withOpacity(0.2), // Adjust opacity as needed
+              ),
+              child: Center(
+                child: Icon(
+                  Icons.remove,
+                  size: 30.0,
+                  color: myPurple,
+                ),
+              ),
+            ),
+          ),
+          // Increase Font Size Area
+          GestureDetector(
+            onTap: _increaseFontSize,
+            child: Container(
+              width: 60.0,
+              height: 60.0,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: myPurple.withOpacity(0.2), // Adjust opacity as needed
+              ),
+              child: Center(
+                child: Icon(
+                  Icons.add,
+                  size: 30.0,
+                  color: myPurple,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
