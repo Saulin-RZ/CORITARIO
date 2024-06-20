@@ -98,9 +98,11 @@ class _ChordsPageState extends State<ChordsPage> {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.favorite_border, color: myWhite, size: 35),
+                  icon: const Icon(Icons.favorite_border, color: myPurple, size: 35),
                   onPressed: () {
                     // Add functionality for the favorite button
+
+                    //NOTE: Change color back to myWhite when implemented
                   },
                 ),
               ],

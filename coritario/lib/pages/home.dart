@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
+      /*bottomNavigationBar: BottomAppBar(
         color: myPurple,
         shape: const CircularNotchedRectangle(),
         child: Row(
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
+      ),*/
       body: ListView(
         children: List.generate(
           displayedIndices.length,
