@@ -51,6 +51,17 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            // Only change the name for release builds
+            if (variant.buildType.name == "release") {
+                // Define the new name for the APK file
+                def newName = "Coritario.apk"
+                outputFileName = newName
+            }
+        }
+    }
 }
 
 flutter {
