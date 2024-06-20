@@ -40,16 +40,16 @@ class _ChordsPageState extends State<ChordsPage> {
   // Function to increase chords font size
   void _increaseFontSize() {
     setState(() {
-      _chordsFontSize += 2.0; // Increase font size by 2 points
+      _chordsFontSize += 1.0; // Increase font size by 2 points
     });
   }
 
   // Function to decrease chords font size
   void _decreaseFontSize() {
     setState(() {
-      _chordsFontSize -= 2.0; // Decrease font size by 2 points
-      if (_chordsFontSize < 10.0) { // Ensure font size doesn't go below a certain limit
-        _chordsFontSize = 10.0;
+      _chordsFontSize -= 1.0; // Decrease font size by 2 points
+      if (_chordsFontSize < 8.0) { // Ensure font size doesn't go below a certain limit
+        _chordsFontSize = 8.0;
       }
     });
   }
