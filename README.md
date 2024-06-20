@@ -27,7 +27,7 @@ Letras:
   </picture>
 </p>
 
-Acordes / Enfoque:
+Acordes / Modo Enfoque:
 
 <p align="center">
   <picture>
