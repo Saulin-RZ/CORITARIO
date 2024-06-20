@@ -27,7 +27,7 @@ Letras:
   </picture>
 </p>
 
-Acordes / Pantalla completa:
+Acordes / Enfoque:
 
 <p align="center">
   <picture>
