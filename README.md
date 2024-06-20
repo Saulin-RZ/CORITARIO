@@ -14,7 +14,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/1.png">
-    <img src="./documentation_images/1.png" width="400">
+    <img src="./documentation_images/1.png" width="500">
   </picture>
 </p>
 
@@ -23,7 +23,7 @@ Letras:
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/2.png">
-    <img src="./documentation_images/2.png" width="400">
+    <img src="./documentation_images/2.png" width="500">
   </picture>
 </p>
 
@@ -32,7 +32,7 @@ Acordes / Pantalla completa:
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./documentation_images/3.png">
-    <img src="./documentation_images/3.png" width="400">
+    <img src="./documentation_images/3.png" width="500">
   </picture>
 </p>
 
