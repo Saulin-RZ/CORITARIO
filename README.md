@@ -35,3 +35,5 @@ Acordes / Pantalla completa:
     <img src="./documentation_images/3.png" width="400">
   </picture>
 </p>
+
+**Nota:** *En Windows* utilice **F11** para entrar y salir del modo pantalla completa.
