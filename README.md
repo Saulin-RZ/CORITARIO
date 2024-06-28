@@ -36,4 +36,4 @@ Acordes / Modo Enfoque:
   </picture>
 </p>
 
-**Nota:** *En Windows* utilice **F11** para entrar y salir del modo pantalla complet.
+**Nota:** *En Windows* utilice **F11** para entrar y salir del modo pantalla completa.
