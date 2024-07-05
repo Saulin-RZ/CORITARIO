@@ -9,7 +9,7 @@ const TextStyle _baseTextStyle = TextStyle(
 // Mutable font size variables
 double _lyricsFontSize = 26;
 double _topNumberFontSize = 30;
-double _sideNumberFontSize = 19.5;
+double _sideNumberFontSize = 14;
 double _listTitlesFontSize = 25;
 
 // Text styles using the mutable font size variables

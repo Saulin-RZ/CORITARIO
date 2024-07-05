@@ -185,16 +185,17 @@ class _HomePageState extends State<HomePage> {
                       height: 30, // Increase the height of the container
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: myPurple, // Example: Apply blue color as background
+                        color: myPurple, // Example: Apply purple color as background
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8, top: 0.5),
+                      child: Align(
+                        alignment: Alignment.center,
                         child: Text(
                           '${numbers[songIndex]}',
                           style: lightThemeSideNumberStyle,
                         ),
                       ),
-                    ), // Add prefix from the numbers list
+                    ),
+ // Add prefix from the numbers list
                     const SizedBox(width: 8), // Add space between prefix and title
                     Text(
                       titles[songIndex],
