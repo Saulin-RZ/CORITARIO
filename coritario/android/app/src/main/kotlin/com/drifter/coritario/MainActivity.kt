@@ -1,4 +1,4 @@
-package com.example.coritario
+package com.drifter.coritario
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -5,7 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:win32/win32.dart';
 import 'package:coritario/pages/home.dart';
 
-void main() {
+void main(){
+  //WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
